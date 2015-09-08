@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>AJAX / XmlHttpRequest</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>AJAX / XmlHttpRequest </h2>
+                    <h3>Web-Programmierung</h3>
+                    <h4>08.09.2015 - Martin Letzel</h4>
+					<p>
+						<small>Kontakt: letzemrt@Schaeffler.com </small>
+					</p>
+				</section>
+                <section>
+						<h2>AJAX</h2>
+						<p><span class="fragment">Asynchronous Javascript and XML</span></p>
+                </section>
+                <section>
+                        <h3><span class="fragment">Asynchrone HTTP-Anfragen</span></h3> 
+                        <p><span class="fragment">
+						Finden im Hintergrund statt während Besucher auf der Seite weiterlesen, Formulare ausfüllen o.ä.
+					</p></span>
+					<span class="fragment"><p>
+				        Callback-Funktion liest die Serverantwort sobald sie vorliegt.
+					</p></span>
+                </section>
+                    
+                <section id="fragments">
+                    <h3><span class="fragment">JavaScript</span></h3><p>   
+                    </p><p><span class="fragment">
+                    Das HTTP-Anfrageobjekt gehört zur allgemeinen JavaScript-Bibliothek
+                    </p></span>
+                </section>
+                
+                <section id="fragments">
+                    <h3><span class="fragment">XML</span></h3>
+                    <p><span class="fragment">
+                    Antwort kann verschachteltes XML und somit per DOM verarbeitbar sein
+					</p></span>
+                </section>
+        
+                <section>
+				    <img src="Schaubild.PNG" width="670" height="750" alt="Schaubild">
+                </section>
+    
+                <section>
+                    <h2>XMLHttpRequest</h2>
+				    <ul>
+                        <li class="fragment">Objekt</li>
+                        <li class="fragment">Schnittstelle zur Kommunikation mit Server</li>
+                        <li class="fragment">HTTP-Anfragen und Antworten vom Server</li>
+                    </ul>
+                    <style>
+                        ul { font-size: 20px; }    
+                    </style>
+                </section>
+            
+                <section>
+                <p>Erzeugen des Objektes</p>
+                <pre><code>var xmlHttpObject = false;
+
+// Überprüfen ob Klasse vorhanden ist + Erzeugen von Objekte für Browser
+
+if (typeof XMLHttpRequest != 'undefined') 
+{
+    xmlHttpObject = new XMLHttpRequest();
+}</code></pre>
+                </section>
+    
+    
+                <section>
+                    <h2>readyState</h2>
+				    <ul>
+                        <li class="fragment">0: Nicht initialisiert</li>
+                        <li class="fragment">1: Objekt ist bereit, keine Daten gesendet</li>
+                        <li class="fragment">2: Anfrage wurde gesendet</li>
+                        <li class="fragment">3: Daten werden empfangen (onreadystatechange wird evtl. mehrmals aufgerufen)</li>
+                        <li class="fragment">4: Alle Daten wurden empfangen</li>
+                    </ul>
+                    <style>
+                        ul { font-size: 20px; }    
+                    </style>
+                </section>
+    
+                <section>
+                    <p>Beispiel: "Benutzername vorhanden?"</p>
+				    <img src="Login2.PNG" width="440" height="170" alt="login2">
+                </section>
+    
+                <section>
+                    <p>Beispiel - "Benutzername vorhanden?"</p>
+				    <img src="login3.png" width="440" height="170" alt="login3">
+                </section>
+    
+                    <section>
+                    <h2>Quellen</h2>
+				    <ul>
+                    <li><a href:http://www.webmasterpro.de/coding/article/ajax-das-xmlhttprequest-objekt.html">www.webmasterpro.de</a></li></a>
+                    <li><a href:http://www.w3schools.com/ajax/ajax_xmlhttprequest_send.asp">www.w3school.com</a></li>    
+                    <li>IT-Handbuch für Fachinformatiker - Rheinwerk Verlag</li>                        
+                    </ul>
+                    <style>
+                        ul { font-size: 20px; }    
+                    </style>
+                </section>
+    
+                <section>
+                    <h2>Vielen Dank fürs Zuhören</h2>
+                </section>
+    
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
